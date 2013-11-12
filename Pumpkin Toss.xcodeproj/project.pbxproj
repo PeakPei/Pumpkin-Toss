@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF53AA801832C0BF00B8B903 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA7F1832C0BF00B8B903 /* Foundation.framework */; };
+		BF53AA821832C0BF00B8B903 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA811832C0BF00B8B903 /* CoreGraphics.framework */; };
+		BF53AA841832C0BF00B8B903 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA831832C0BF00B8B903 /* UIKit.framework */; };
+		BF53AA861832C0BF00B8B903 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA851832C0BF00B8B903 /* SpriteKit.framework */; };
+		BF53AA8C1832C0BF00B8B903 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF53AA8A1832C0BF00B8B903 /* InfoPlist.strings */; };
+		BF53AA8E1832C0BF00B8B903 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AA8D1832C0BF00B8B903 /* main.m */; };
+		BF53AA921832C0BF00B8B903 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AA911832C0BF00B8B903 /* AppDelegate.m */; };
+		BF53AA951832C0BF00B8B903 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF53AA931832C0BF00B8B903 /* Main_iPhone.storyboard */; };
+		BF53AA981832C0BF00B8B903 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF53AA961832C0BF00B8B903 /* Main_iPad.storyboard */; };
+		BF53AA9B1832C0BF00B8B903 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AA9A1832C0BF00B8B903 /* ViewController.m */; };
+		BF53AA9E1832C0BF00B8B903 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AA9D1832C0BF00B8B903 /* MyScene.m */; };
+		BF53AAA01832C0BF00B8B903 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = BF53AA9F1832C0BF00B8B903 /* Spaceship.png */; };
+		BF53AAA21832C0BF00B8B903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF53AAA11832C0BF00B8B903 /* Images.xcassets */; };
+		BF53AAA91832C0BF00B8B903 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AAA81832C0BF00B8B903 /* XCTest.framework */; };
+		BF53AAAA1832C0BF00B8B903 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA7F1832C0BF00B8B903 /* Foundation.framework */; };
+		BF53AAAB1832C0BF00B8B903 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA831832C0BF00B8B903 /* UIKit.framework */; };
+		BF53AAB31832C0BF00B8B903 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF53AAB11832C0BF00B8B903 /* InfoPlist.strings */; };
+		BF53AAB51832C0BF00B8B903 /* Pumpkin_TossTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AAB41832C0BF00B8B903 /* Pumpkin_TossTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF53AAAC1832C0BF00B8B903 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF53AA741832C0BF00B8B903 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF53AA7B1832C0BF00B8B903;
+			remoteInfo = "Pumpkin Toss";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF53AA7C1832C0BF00B8B903 /* Pumpkin Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pumpkin Toss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF53AA7F1832C0BF00B8B903 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF53AA811832C0BF00B8B903 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BF53AA831832C0BF00B8B903 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BF53AA851832C0BF00B8B903 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		BF53AA891832C0BF00B8B903 /* Pumpkin Toss-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pumpkin Toss-Info.plist"; sourceTree = "<group>"; };
+		BF53AA8B1832C0BF00B8B903 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF53AA8D1832C0BF00B8B903 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF53AA8F1832C0BF00B8B903 /* Pumpkin Toss-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pumpkin Toss-Prefix.pch"; sourceTree = "<group>"; };
+		BF53AA901832C0BF00B8B903 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF53AA911832C0BF00B8B903 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF53AA941832C0BF00B8B903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		BF53AA971832C0BF00B8B903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		BF53AA991832C0BF00B8B903 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BF53AA9A1832C0BF00B8B903 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BF53AA9C1832C0BF00B8B903 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		BF53AA9D1832C0BF00B8B903 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		BF53AA9F1832C0BF00B8B903 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		BF53AAA11832C0BF00B8B903 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BF53AAA71832C0BF00B8B903 /* Pumpkin TossTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pumpkin TossTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF53AAA81832C0BF00B8B903 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BF53AAB01832C0BF00B8B903 /* Pumpkin TossTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pumpkin TossTests-Info.plist"; sourceTree = "<group>"; };
+		BF53AAB21832C0BF00B8B903 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF53AAB41832C0BF00B8B903 /* Pumpkin_TossTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pumpkin_TossTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF53AA791832C0BF00B8B903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF53AA821832C0BF00B8B903 /* CoreGraphics.framework in Frameworks */,
+				BF53AA841832C0BF00B8B903 /* UIKit.framework in Frameworks */,
+				BF53AA861832C0BF00B8B903 /* SpriteKit.framework in Frameworks */,
+				BF53AA801832C0BF00B8B903 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF53AAA41832C0BF00B8B903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF53AAA91832C0BF00B8B903 /* XCTest.framework in Frameworks */,
+				BF53AAAB1832C0BF00B8B903 /* UIKit.framework in Frameworks */,
+				BF53AAAA1832C0BF00B8B903 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF53AA731832C0BF00B8B903 = {
+			isa = PBXGroup;
+			children = (
+				BF53AA871832C0BF00B8B903 /* Pumpkin Toss */,
+				BF53AAAE1832C0BF00B8B903 /* Pumpkin TossTests */,
+				BF53AA7E1832C0BF00B8B903 /* Frameworks */,
+				BF53AA7D1832C0BF00B8B903 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF53AA7D1832C0BF00B8B903 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF53AA7C1832C0BF00B8B903 /* Pumpkin Toss.app */,
+				BF53AAA71832C0BF00B8B903 /* Pumpkin TossTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF53AA7E1832C0BF00B8B903 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF53AA7F1832C0BF00B8B903 /* Foundation.framework */,
+				BF53AA811832C0BF00B8B903 /* CoreGraphics.framework */,
+				BF53AA831832C0BF00B8B903 /* UIKit.framework */,
+				BF53AA851832C0BF00B8B903 /* SpriteKit.framework */,
+				BF53AAA81832C0BF00B8B903 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF53AA871832C0BF00B8B903 /* Pumpkin Toss */ = {
+			isa = PBXGroup;
+			children = (
+				BF53AA901832C0BF00B8B903 /* AppDelegate.h */,
+				BF53AA911832C0BF00B8B903 /* AppDelegate.m */,
+				BF53AA931832C0BF00B8B903 /* Main_iPhone.storyboard */,
+				BF53AA961832C0BF00B8B903 /* Main_iPad.storyboard */,
+				BF53AA991832C0BF00B8B903 /* ViewController.h */,
+				BF53AA9A1832C0BF00B8B903 /* ViewController.m */,
+				BF53AA9C1832C0BF00B8B903 /* MyScene.h */,
+				BF53AA9D1832C0BF00B8B903 /* MyScene.m */,
+				BF53AA9F1832C0BF00B8B903 /* Spaceship.png */,
+				BF53AAA11832C0BF00B8B903 /* Images.xcassets */,
+				BF53AA881832C0BF00B8B903 /* Supporting Files */,
+			);
+			path = "Pumpkin Toss";
+			sourceTree = "<group>";
+		};
+		BF53AA881832C0BF00B8B903 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF53AA891832C0BF00B8B903 /* Pumpkin Toss-Info.plist */,
+				BF53AA8A1832C0BF00B8B903 /* InfoPlist.strings */,
+				BF53AA8D1832C0BF00B8B903 /* main.m */,
+				BF53AA8F1832C0BF00B8B903 /* Pumpkin Toss-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF53AAAE1832C0BF00B8B903 /* Pumpkin TossTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF53AAB41832C0BF00B8B903 /* Pumpkin_TossTests.m */,
+				BF53AAAF1832C0BF00B8B903 /* Supporting Files */,
+			);
+			path = "Pumpkin TossTests";
+			sourceTree = "<group>";
+		};
+		BF53AAAF1832C0BF00B8B903 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF53AAB01832C0BF00B8B903 /* Pumpkin TossTests-Info.plist */,
+				BF53AAB11832C0BF00B8B903 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF53AA7B1832C0BF00B8B903 /* Pumpkin Toss */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF53AAB81832C0BF00B8B903 /* Build configuration list for PBXNativeTarget "Pumpkin Toss" */;
+			buildPhases = (
+				BF53AA781832C0BF00B8B903 /* Sources */,
+				BF53AA791832C0BF00B8B903 /* Frameworks */,
+				BF53AA7A1832C0BF00B8B903 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pumpkin Toss";
+			productName = "Pumpkin Toss";
+			productReference = BF53AA7C1832C0BF00B8B903 /* Pumpkin Toss.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF53AAA61832C0BF00B8B903 /* Pumpkin TossTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF53AABB1832C0BF00B8B903 /* Build configuration list for PBXNativeTarget "Pumpkin TossTests" */;
+			buildPhases = (
+				BF53AAA31832C0BF00B8B903 /* Sources */,
+				BF53AAA41832C0BF00B8B903 /* Frameworks */,
+				BF53AAA51832C0BF00B8B903 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF53AAAD1832C0BF00B8B903 /* PBXTargetDependency */,
+			);
+			name = "Pumpkin TossTests";
+			productName = "Pumpkin TossTests";
+			productReference = BF53AAA71832C0BF00B8B903 /* Pumpkin TossTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF53AA741832C0BF00B8B903 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Riley Williams";
+				TargetAttributes = {
+					BF53AAA61832C0BF00B8B903 = {
+						TestTargetID = BF53AA7B1832C0BF00B8B903;
+					};
+				};
+			};
+			buildConfigurationList = BF53AA771832C0BF00B8B903 /* Build configuration list for PBXProject "Pumpkin Toss" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF53AA731832C0BF00B8B903;
+			productRefGroup = BF53AA7D1832C0BF00B8B903 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF53AA7B1832C0BF00B8B903 /* Pumpkin Toss */,
+				BF53AAA61832C0BF00B8B903 /* Pumpkin TossTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF53AA7A1832C0BF00B8B903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF53AAA01832C0BF00B8B903 /* Spaceship.png in Resources */,
+				BF53AAA21832C0BF00B8B903 /* Images.xcassets in Resources */,
+				BF53AA981832C0BF00B8B903 /* Main_iPad.storyboard in Resources */,
+				BF53AA951832C0BF00B8B903 /* Main_iPhone.storyboard in Resources */,
+				BF53AA8C1832C0BF00B8B903 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF53AAA51832C0BF00B8B903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF53AAB31832C0BF00B8B903 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF53AA781832C0BF00B8B903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF53AA9E1832C0BF00B8B903 /* MyScene.m in Sources */,
+				BF53AA9B1832C0BF00B8B903 /* ViewController.m in Sources */,
+				BF53AA921832C0BF00B8B903 /* AppDelegate.m in Sources */,
+				BF53AA8E1832C0BF00B8B903 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF53AAA31832C0BF00B8B903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF53AAB51832C0BF00B8B903 /* Pumpkin_TossTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF53AAAD1832C0BF00B8B903 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF53AA7B1832C0BF00B8B903 /* Pumpkin Toss */;
+			targetProxy = BF53AAAC1832C0BF00B8B903 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF53AA8A1832C0BF00B8B903 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF53AA8B1832C0BF00B8B903 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BF53AA931832C0BF00B8B903 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF53AA941832C0BF00B8B903 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		BF53AA961832C0BF00B8B903 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF53AA971832C0BF00B8B903 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		BF53AAB11832C0BF00B8B903 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF53AAB21832C0BF00B8B903 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF53AAB61832C0BF00B8B903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF53AAB71832C0BF00B8B903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF53AAB91832C0BF00B8B903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pumpkin Toss/Pumpkin Toss-Prefix.pch";
+				INFOPLIST_FILE = "Pumpkin Toss/Pumpkin Toss-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BF53AABA1832C0BF00B8B903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pumpkin Toss/Pumpkin Toss-Prefix.pch";
+				INFOPLIST_FILE = "Pumpkin Toss/Pumpkin Toss-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BF53AABC1832C0BF00B8B903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pumpkin Toss.app/Pumpkin Toss";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pumpkin Toss/Pumpkin Toss-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Pumpkin TossTests/Pumpkin TossTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BF53AABD1832C0BF00B8B903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pumpkin Toss.app/Pumpkin Toss";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pumpkin Toss/Pumpkin Toss-Prefix.pch";
+				INFOPLIST_FILE = "Pumpkin TossTests/Pumpkin TossTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF53AA771832C0BF00B8B903 /* Build configuration list for PBXProject "Pumpkin Toss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF53AAB61832C0BF00B8B903 /* Debug */,
+				BF53AAB71832C0BF00B8B903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF53AAB81832C0BF00B8B903 /* Build configuration list for PBXNativeTarget "Pumpkin Toss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF53AAB91832C0BF00B8B903 /* Debug */,
+				BF53AABA1832C0BF00B8B903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BF53AABB1832C0BF00B8B903 /* Build configuration list for PBXNativeTarget "Pumpkin TossTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF53AABC1832C0BF00B8B903 /* Debug */,
+				BF53AABD1832C0BF00B8B903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF53AA741832C0BF00B8B903 /* Project object */;
+}
