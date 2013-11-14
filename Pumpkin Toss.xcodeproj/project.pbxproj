@@ -25,6 +25,15 @@
 		BF53AAAB1832C0BF00B8B903 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA831832C0BF00B8B903 /* UIKit.framework */; };
 		BF53AAB31832C0BF00B8B903 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF53AAB11832C0BF00B8B903 /* InfoPlist.strings */; };
 		BF53AAB51832C0BF00B8B903 /* Pumpkin_TossTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AAB41832C0BF00B8B903 /* Pumpkin_TossTests.m */; };
+		BF53AAC11832CA5500B8B903 /* Pumpkin.png in Resources */ = {isa = PBXBuildFile; fileRef = BF53AAC01832CA5500B8B903 /* Pumpkin.png */; };
+		BF8C6AE61833EC2C00F530F8 /* Leaf1.png in Resources */ = {isa = PBXBuildFile; fileRef = BF8C6AE51833EC2C00F530F8 /* Leaf1.png */; };
+		BF8C6AE81833EC4800F530F8 /* Leaves.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF8C6AE71833EC4800F530F8 /* Leaves.sks */; };
+		BF9364751832D57700D44D5D /* Break.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9364731832D57700D44D5D /* Break.sks */; };
+		BF9364761832D57700D44D5D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9364741832D57700D44D5D /* spark.png */; };
+		BF93647B1832EF5700D44D5D /* Flame.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF93647A1832EF5700D44D5D /* Flame.sks */; };
+		BFC7F7011832F78800649CCA /* Turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F7001832F78800649CCA /* Turkey.png */; };
+		BFC7F7031833298900649CCA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC7F7021833298900649CCA /* CoreMotion.framework */; };
+		BFC7F7051833354300649CCA /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F7041833354300649CCA /* Default-Landscape@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +71,15 @@
 		BF53AAB01832C0BF00B8B903 /* Pumpkin TossTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pumpkin TossTests-Info.plist"; sourceTree = "<group>"; };
 		BF53AAB21832C0BF00B8B903 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BF53AAB41832C0BF00B8B903 /* Pumpkin_TossTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pumpkin_TossTests.m; sourceTree = "<group>"; };
+		BF53AAC01832CA5500B8B903 /* Pumpkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pumpkin.png; sourceTree = "<group>"; };
+		BF8C6AE51833EC2C00F530F8 /* Leaf1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Leaf1.png; sourceTree = "<group>"; };
+		BF8C6AE71833EC4800F530F8 /* Leaves.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Leaves.sks; sourceTree = "<group>"; };
+		BF9364731832D57700D44D5D /* Break.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Break.sks; sourceTree = "<group>"; };
+		BF9364741832D57700D44D5D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		BF93647A1832EF5700D44D5D /* Flame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Flame.sks; sourceTree = "<group>"; };
+		BFC7F7001832F78800649CCA /* Turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Turkey.png; sourceTree = "<group>"; };
+		BFC7F7021833298900649CCA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BFC7F7041833354300649CCA /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x.png"; path = "../Default-Landscape@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC7F7031833298900649CCA /* CoreMotion.framework in Frameworks */,
 				BF53AA821832C0BF00B8B903 /* CoreGraphics.framework in Frameworks */,
 				BF53AA841832C0BF00B8B903 /* UIKit.framework in Frameworks */,
 				BF53AA861832C0BF00B8B903 /* SpriteKit.framework in Frameworks */,
@@ -111,6 +130,7 @@
 		BF53AA7E1832C0BF00B8B903 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFC7F7021833298900649CCA /* CoreMotion.framework */,
 				BF53AA7F1832C0BF00B8B903 /* Foundation.framework */,
 				BF53AA811832C0BF00B8B903 /* CoreGraphics.framework */,
 				BF53AA831832C0BF00B8B903 /* UIKit.framework */,
@@ -131,7 +151,15 @@
 				BF53AA9A1832C0BF00B8B903 /* ViewController.m */,
 				BF53AA9C1832C0BF00B8B903 /* MyScene.h */,
 				BF53AA9D1832C0BF00B8B903 /* MyScene.m */,
+				BF8C6AE71833EC4800F530F8 /* Leaves.sks */,
+				BF93647A1832EF5700D44D5D /* Flame.sks */,
+				BF9364731832D57700D44D5D /* Break.sks */,
+				BF9364741832D57700D44D5D /* spark.png */,
 				BF53AA9F1832C0BF00B8B903 /* Spaceship.png */,
+				BF53AAC01832CA5500B8B903 /* Pumpkin.png */,
+				BFC7F7001832F78800649CCA /* Turkey.png */,
+				BF8C6AE51833EC2C00F530F8 /* Leaf1.png */,
+				BFC7F7041833354300649CCA /* Default-Landscape@2x.png */,
 				BF53AAA11832C0BF00B8B903 /* Images.xcassets */,
 				BF53AA881832C0BF00B8B903 /* Supporting Files */,
 			);
@@ -214,6 +242,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Riley Williams";
 				TargetAttributes = {
+					BF53AA7B1832C0BF00B8B903 = {
+						DevelopmentTeam = 35DU34M8BN;
+					};
 					BF53AAA61832C0BF00B8B903 = {
 						TestTargetID = BF53AA7B1832C0BF00B8B903;
 					};
@@ -244,10 +275,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF53AAA01832C0BF00B8B903 /* Spaceship.png in Resources */,
+				BF9364751832D57700D44D5D /* Break.sks in Resources */,
 				BF53AAA21832C0BF00B8B903 /* Images.xcassets in Resources */,
 				BF53AA981832C0BF00B8B903 /* Main_iPad.storyboard in Resources */,
+				BF93647B1832EF5700D44D5D /* Flame.sks in Resources */,
+				BFC7F7011832F78800649CCA /* Turkey.png in Resources */,
 				BF53AA951832C0BF00B8B903 /* Main_iPhone.storyboard in Resources */,
+				BF8C6AE81833EC4800F530F8 /* Leaves.sks in Resources */,
+				BF9364761832D57700D44D5D /* spark.png in Resources */,
+				BF53AAC11832CA5500B8B903 /* Pumpkin.png in Resources */,
+				BF8C6AE61833EC2C00F530F8 /* Leaf1.png in Resources */,
 				BF53AA8C1832C0BF00B8B903 /* InfoPlist.strings in Resources */,
+				BFC7F7051833354300649CCA /* Default-Landscape@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,10 +445,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pumpkin Toss/Pumpkin Toss-Prefix.pch";
 				INFOPLIST_FILE = "Pumpkin Toss/Pumpkin Toss-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -420,10 +462,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pumpkin Toss/Pumpkin Toss-Prefix.pch";
 				INFOPLIST_FILE = "Pumpkin Toss/Pumpkin Toss-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -490,6 +535,7 @@
 				BF53AABA1832C0BF00B8B903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF53AABB1832C0BF00B8B903 /* Build configuration list for PBXNativeTarget "Pumpkin TossTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +544,7 @@
 				BF53AABD1832C0BF00B8B903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
