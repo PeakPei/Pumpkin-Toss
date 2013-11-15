@@ -12,14 +12,20 @@
 @interface MyScene : SKScene <SKPhysicsContactDelegate>
 
 @property SKSpriteNode *turkey;
-@property float scaleMultiplier;
 
-@property (strong) SKEmitterNode *leaves;
+//@property (strong) SKEmitterNode *leaves;
+
+@property NSMutableSet *pumpkins;
+@property NSMutableSet *leaves;
 
 @property SKLabelNode *message;
 
 @property int pumpkinsPopped;
 @property NSTimeInterval lastTap;
+
+
+@property NSTimer *leafGen;
+@property (nonatomic) float leafRate;
 
 //@property SKAction *touch;
 

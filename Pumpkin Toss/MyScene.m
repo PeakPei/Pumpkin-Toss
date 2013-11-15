@@ -14,6 +14,7 @@
 static const uint32_t pumpkinCategory	= 0x1 << 0;
 static const uint32_t turkeyCategory	= 0x1 << 1;
 static const uint32_t envCategory		= 0x1 << 2;
+static const uint32_t leafCategory		= 0x1 << 3;
 
 @implementation MyScene
 
@@ -23,6 +24,8 @@ static const uint32_t envCategory		= 0x1 << 2;
 		self.motionManager.accelerometerUpdateInterval = 1/60.0f;
 		[self.motionManager startAccelerometerUpdates];
         
+		self.pumpkins = [[NSMutableArray alloc] init];
+		self.leaves = [[NSMutableSet alloc] init];
         self.backgroundColor = [SKColor colorWithRed:1.0 green:0.35 blue:0.0 alpha:1.0];
         
         self.message = [SKLabelNode labelNodeWithFontNamed:@"Futura"];
@@ -35,6 +38,7 @@ static const uint32_t envCategory		= 0x1 << 2;
 		
 		self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
 		self.physicsBody.contactTestBitMask = envCategory;
+		self.physicsBody.collisionBitMask = pumpkinCategory | turkeyCategory | leafCategory;
 		self.physicsBody.friction = .50;
 		self.physicsWorld.gravity = CGVectorMake(0, -5.0);
 		self.physicsWorld.contactDelegate = self;
@@ -46,26 +50,60 @@ static const uint32_t envCategory		= 0x1 << 2;
 		self.turkey.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(.9*self.turkey.size.width, .9*self.turkey.size.height)];
 		self.turkey.physicsBody.affectedByGravity = YES;
 		self.turkey.physicsBody.categoryBitMask = turkeyCategory;
-		self.turkey.physicsBody.contactTestBitMask = pumpkinCategory | envCategory;
+		self.turkey.physicsBody.contactTestBitMask = envCategory | pumpkinCategory;
 		self.turkey.physicsBody.collisionBitMask = envCategory;
 		self.turkey.physicsBody.allowsRotation = NO;
 		self.turkey.physicsBody.restitution = .6;
 		self.turkey.physicsBody.friction = .4;
 		self.turkey.zPosition = 1;
 		[self addChild:self.turkey];
-		self.scaleMultiplier = 1;
 		
 		self.wind = malloc(sizeof(CGVector)*16*9*GRID_DEPTH);
 		
 		self.pumpkinsPopped = 0;
 		NSTimer *t = [NSTimer timerWithTimeInterval:.5 target:self selector:@selector(recalculateLeafRate) userInfo:Nil repeats:YES];
 		[[NSRunLoop currentRunLoop] addTimer:t forMode:NSRunLoopCommonModes];
+		
+		self.leafGen = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(addLeaf) userInfo:nil repeats:YES];
+		[[NSRunLoop currentRunLoop] addTimer:self.leafGen forMode:NSRunLoopCommonModes];
+		
 	}
     return self;
 }
 
+-(void)addLeaf {
+	SKSpriteNode *leaf = [SKSpriteNode spriteNodeWithImageNamed:@"Leaf1"];
+	leaf.position = CGPointMake(arc4random_uniform(self.frame.size.width), arc4random_uniform(self.frame.size.height));
+	leaf.blendMode = SKBlendModeAlpha;
+	leaf.color = [UIColor redColor];
+	leaf.colorBlendFactor = 1.0f;
+	int size = arc4random_uniform(100)/7+5;
+	leaf.size = CGSizeMake(size, size);
+	leaf.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:.4f*size];
+	leaf.physicsBody.mass = .005*size*size;
+	leaf.physicsBody.restitution = .05;
+	leaf.physicsBody.friction = .9;
+	leaf.physicsBody.categoryBitMask = leafCategory;
+	leaf.physicsBody.collisionBitMask = leafCategory;
+	leaf.physicsBody.angularDamping = .95;
+	leaf.physicsBody.linearDamping = .1;
+	leaf.physicsBody.angularVelocity = (arc4random_uniform(360)-180)/90;
+	SKAction *fadeOut = [SKAction fadeOutWithDuration:arc4random_uniform(100)/20+5];
+	[leaf runAction:fadeOut completion:^(void) {
+		[self.leaves removeObject:leaf];
+		[leaf removeFromParent];
+	}];
+	[self addChild:leaf];
+	[self.leaves addObject:leaf];
+}
+
+float range(float start, float range) {
+	return arc4random_uniform(range*100)/100+start-range/2.0f;
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
+	/*
 	self.lastTap = [NSDate timeIntervalSinceReferenceDate];
     if (self.leaves == nil) {
 		self.leaves = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Leaves" ofType:@"sks"]];
@@ -74,7 +112,7 @@ static const uint32_t envCategory		= 0x1 << 2;
 		self.leaves.zPosition = -1;
 		[self addChild:self.leaves];
 	}
-	
+	*/
     for (UITouch *touch in touches) {
 		[self addPumpkinAtLocation:[touch locationInNode:self]];
     }
@@ -96,12 +134,12 @@ static const uint32_t envCategory		= 0x1 << 2;
 		}
 	}
 	
-	self.leaves.particleBirthRate = 2 * self.pumpkinsPopped + .1;
+	self.leafRate = 10 * self.pumpkinsPopped + .1;
 	if (i++ >= 1) {
 		i = 0;
 		self.pumpkinsPopped = 0;
 	}
-	NSLog(@"%f",self.leaves.particleBirthRate);
+	NSLog(@"%f",self.leafRate);
 }
 
 -(void)addPumpkinAtLocation:(CGPoint)location {
@@ -118,9 +156,11 @@ static const uint32_t envCategory		= 0x1 << 2;
 	sprite.physicsBody.velocity = CGVectorMake(speed*cosf(angle), speed*sinf(angle));
 	sprite.physicsBody.categoryBitMask = pumpkinCategory;
 	sprite.physicsBody.contactTestBitMask = pumpkinCategory;
+	sprite.physicsBody.collisionBitMask = pumpkinCategory | envCategory | turkeyCategory;
 	sprite.zPosition = .75;
 	sprite.physicsBody.angularVelocity = 3*M_PI*(arc4random_uniform(1024)/512.0f-1);
 	[self addChild:sprite];
+	[self.pumpkins addObject:sprite];
 	
 }
 
@@ -134,6 +174,7 @@ static const uint32_t envCategory		= 0x1 << 2;
 			explosion.position = contact.bodyB.node.position;
 			[self addChild:explosion];
 			[contact.bodyA.node removeFromParent];
+			[self.pumpkins removeObject:contact.bodyA.node];
 			self.pumpkinsPopped++;
 		}
 		if (impPerMassB > 600) {
@@ -141,6 +182,7 @@ static const uint32_t envCategory		= 0x1 << 2;
 			explosion.position = contact.bodyB.node.position;
 			[self addChild:explosion];
 			[contact.bodyB.node removeFromParent];
+			[self.pumpkins removeObject:contact.bodyB.node];
 			self.pumpkinsPopped++;
 		}
 	} else if ((contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask) == (pumpkinCategory | turkeyCategory)) {
@@ -148,10 +190,13 @@ static const uint32_t envCategory		= 0x1 << 2;
 		explosion.position = contact.contactPoint;
 		[self addChild:explosion];
 		self.pumpkinsPopped++;
-		if (contact.bodyA.categoryBitMask == turkeyCategory)
+		if (contact.bodyA.categoryBitMask == turkeyCategory) {
 			[contact.bodyB.node removeFromParent];
-		else
+			[self.pumpkins removeObject:contact.bodyB.node];
+		} else {
 			[contact.bodyA.node removeFromParent];
+			[self.pumpkins removeObject:contact.bodyA.node];
+		}
 	}
 }
 
@@ -165,13 +210,11 @@ static const uint32_t envCategory		= 0x1 << 2;
 	CGPoint turkey = self.turkey.position;
 	float distance = 10000;
 	CGPoint target = CGPointMake(self.frame.size.width/2, 100);
-	for (SKSpriteNode *node in self.children) {
-		if (node.physicsBody.categoryBitMask == pumpkinCategory) {
+	for (SKSpriteNode *node in self.pumpkins) {
 			float di = turkey.x-node.position.x;
 			if (fabs(di) < fabs(distance)) {
 				distance = di;
 				target = node.position;
-			}
 			//int x = map(node.position.x, 0, self.frame.size.width, 0, 16);
 		}
 	}
@@ -186,12 +229,22 @@ static const uint32_t envCategory		= 0x1 << 2;
 	if (distance < 80 && self.turkey.position.y < 31 && target.y > 80) {
 		self.turkey.physicsBody.velocity = CGVectorMake(self.turkey.physicsBody.velocity.dx*.8,380);
 	}
-	NSArray *particles = self.leaves.children;
-	NSLog(@"%@",particles);
 }
 
 int map(int a, int minA, int maxA, int minX, int maxX) {
 	return a*(maxX-minX)/(maxA-minA);
+}
+
+#pragma mark Setters/getters
+
+-(void)setLeafRate:(float)leafRate {
+	[self.leafGen invalidate];
+	self.leafGen = [NSTimer timerWithTimeInterval:1.0f/leafRate target:self selector:@selector(addLeaf) userInfo:nil repeats:YES];
+	[[NSRunLoop currentRunLoop] addTimer:self.leafGen forMode:NSRunLoopCommonModes];
+}
+
+-(float)leafRate {
+	return 1.0f/self.leafGen.timeInterval;
 }
 
 @end
