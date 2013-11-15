@@ -12,7 +12,6 @@
 @interface MyScene : SKScene <SKPhysicsContactDelegate>
 
 @property SKSpriteNode *turkey;
-@property float scaleMultiplier;
 
 @property (strong) SKEmitterNode *leaves;
 
@@ -20,10 +19,7 @@
 
 @property int pumpkinsPopped;
 @property NSTimeInterval lastTap;
-
-//@property SKAction *touch;
-
-@property CGVector *wind;
+@property NSTimeInterval lastReset;
 
 @property (nonatomic, strong) CMMotionManager *motionManager;
 

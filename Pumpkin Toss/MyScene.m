@@ -53,12 +53,19 @@ static const uint32_t envCategory		= 0x1 << 2;
 		self.turkey.physicsBody.friction = .4;
 		self.turkey.zPosition = 1;
 		[self addChild:self.turkey];
-		self.scaleMultiplier = 1;
 		
-		self.wind = malloc(sizeof(CGVector)*16*9*GRID_DEPTH);
+		
+		self.leaves = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Leaves" ofType:@"sks"]];
+		self.leaves.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)+20);
+		self.leaves.particlePositionRange = CGVectorMake(self.frame.size.width, 0);
+		self.leaves.zPosition = -1;
+		self.leaves.particleBirthRate = 200;
+		[self addChild:self.leaves];
+		
 		
 		self.pumpkinsPopped = 0;
-		NSTimer *t = [NSTimer timerWithTimeInterval:.5 target:self selector:@selector(recalculateLeafRate) userInfo:Nil repeats:YES];
+		
+		NSTimer *t = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(recalculateLeafRate) userInfo:nil repeats:YES];
 		[[NSRunLoop currentRunLoop] addTimer:t forMode:NSRunLoopCommonModes];
 	}
     return self;
@@ -67,13 +74,6 @@ static const uint32_t envCategory		= 0x1 << 2;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
 	self.lastTap = [NSDate timeIntervalSinceReferenceDate];
-    if (self.leaves == nil) {
-		self.leaves = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Leaves" ofType:@"sks"]];
-		self.leaves.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)+20);
-		self.leaves.particlePositionRange = CGVectorMake(self.frame.size.width, 0);
-		self.leaves.zPosition = -1;
-		[self addChild:self.leaves];
-	}
 	
     for (UITouch *touch in touches) {
 		[self addPumpkinAtLocation:[touch locationInNode:self]];
@@ -96,12 +96,13 @@ static const uint32_t envCategory		= 0x1 << 2;
 		}
 	}
 	
-	self.leaves.particleBirthRate = 2 * self.pumpkinsPopped + .1;
-	if (i++ >= 1) {
+	self.leaves.particleBirthRate = (2 * self.pumpkinsPopped) + 1.5;
+	i++;
+	if (i > 1) {
 		i = 0;
 		self.pumpkinsPopped = 0;
 	}
-	NSLog(@"%f",self.leaves.particleBirthRate);
+	NSLog(@"%2i\t%2.1f\t%i",self.pumpkinsPopped, self.leaves.particleBirthRate, i);
 }
 
 -(void)addPumpkinAtLocation:(CGPoint)location {
@@ -186,8 +187,6 @@ static const uint32_t envCategory		= 0x1 << 2;
 	if (distance < 80 && self.turkey.position.y < 31 && target.y > 80) {
 		self.turkey.physicsBody.velocity = CGVectorMake(self.turkey.physicsBody.velocity.dx*.8,380);
 	}
-	NSArray *particles = self.leaves.children;
-	NSLog(@"%@",particles);
 }
 
 int map(int a, int minA, int maxA, int minX, int maxX) {
