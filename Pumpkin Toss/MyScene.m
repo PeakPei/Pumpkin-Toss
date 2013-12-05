@@ -39,7 +39,7 @@ static const uint32_t leafCategory		= 0x1 << 3;
 		self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
 		self.physicsBody.contactTestBitMask = envCategory;
 		self.physicsBody.collisionBitMask = pumpkinCategory | turkeyCategory | leafCategory;
-		self.physicsBody.friction = .50;
+		self.physicsBody.friction = .2;
 		self.physicsWorld.gravity = CGVectorMake(0, -5.0);
 		self.physicsWorld.contactDelegate = self;
 		
@@ -54,7 +54,7 @@ static const uint32_t leafCategory		= 0x1 << 3;
 		self.turkey.physicsBody.collisionBitMask = envCategory;
 		self.turkey.physicsBody.allowsRotation = NO;
 		self.turkey.physicsBody.restitution = .6;
-		self.turkey.physicsBody.friction = .4;
+		self.turkey.physicsBody.friction = .8;
 		self.turkey.zPosition = 1;
 		[self addChild:self.turkey];
 		
@@ -72,23 +72,28 @@ static const uint32_t leafCategory		= 0x1 << 3;
 }
 
 -(void)addLeaf {
+	if ([self.leaves count] > 250) {
+		return;
+	}
 	SKSpriteNode *leaf = [SKSpriteNode spriteNodeWithImageNamed:@"Leaf1"];
-	leaf.position = CGPointMake(arc4random_uniform(self.frame.size.width), arc4random_uniform(self.frame.size.height));
+	leaf.position = CGPointMake(arc4random_uniform(self.frame.size.width), arc4random_uniform(self.frame.size.height/2)+.5*self.frame.size.height);
 	leaf.blendMode = SKBlendModeAlpha;
 	leaf.color = [UIColor redColor];
 	leaf.colorBlendFactor = 1.0f;
-	int size = arc4random_uniform(100)/7+5;
+	int size = arc4random_uniform(10)/2+15;
 	leaf.size = CGSizeMake(size, size);
 	leaf.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:.4f*size];
-	leaf.physicsBody.mass = .005*size*size;
-	leaf.physicsBody.restitution = .05;
-	leaf.physicsBody.friction = .9;
+	leaf.physicsBody.mass = .0005*size*size;
+	leaf.physicsBody.restitution = .1;
+	leaf.physicsBody.friction = .1;
 	leaf.physicsBody.categoryBitMask = leafCategory;
 	leaf.physicsBody.collisionBitMask = leafCategory;
-	leaf.physicsBody.angularDamping = .95;
-	leaf.physicsBody.linearDamping = .1;
-	leaf.physicsBody.angularVelocity = (arc4random_uniform(360)-180)/90;
-	SKAction *fadeOut = [SKAction fadeOutWithDuration:arc4random_uniform(100)/20+5];
+	leaf.physicsBody.angularDamping = .001;
+	//leaf.physicsBody.linearDamping = .999999;
+	leaf.physicsBody.angularVelocity = arc4random_uniform(100)/20;
+	SKAction *fadeOut = [SKAction fadeOutWithDuration:arc4random_uniform(100)/9+5];
+	SKAction *colorChange = [SKAction colorizeWithColor:[UIColor yellowColor] colorBlendFactor:1 duration:fadeOut.duration];
+	[leaf runAction:colorChange];
 	[leaf runAction:fadeOut completion:^(void) {
 		[self.leaves removeObject:leaf];
 		[leaf removeFromParent];
@@ -103,8 +108,9 @@ float range(float start, float range) {
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-	/*
+	
 	self.lastTap = [NSDate timeIntervalSinceReferenceDate];
+	/*
     if (self.leaves == nil) {
 		self.leaves = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Leaves" ofType:@"sks"]];
 		self.leaves.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)+20);
@@ -134,12 +140,12 @@ float range(float start, float range) {
 		}
 	}
 	
-	self.leafRate = 10 * self.pumpkinsPopped + .1;
+	self.leafRate = 10 * self.pumpkinsPopped + 10;
 	if (i++ >= 1) {
 		i = 0;
 		self.pumpkinsPopped = 0;
 	}
-	NSLog(@"%f",self.leafRate);
+	//NSLog(@"%f",self.leafRate);
 }
 
 -(void)addPumpkinAtLocation:(CGPoint)location {
@@ -201,7 +207,11 @@ float range(float start, float range) {
 }
 
 -(void)update:(CFTimeInterval)currentTime {
-	
+	for (SKSpriteNode *leaf in self.leaves) {
+		
+		float d = powf((leaf.position.x - self.turkey.position.x),2) + powf(leaf.position.y - self.turkey.position.y, 2);
+		[leaf.physicsBody applyForce:CGVectorMake(-leaf.physicsBody.mass*leaf.physicsBody.velocity.dx + 200*self.turkey.physicsBody.velocity.dx/d,-leaf.physicsBody.mass*leaf.physicsBody.velocity.dy + 200*self.turkey.physicsBody.velocity.dy/d)];
+	}
 	float xAccl = self.motionManager.accelerometerData.acceleration.y;
 	//float yAccl = -self.motionManager.accelerometerData.acceleration.x;
 	
