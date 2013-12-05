@@ -26,11 +26,11 @@ static const uint32_t leafCategory		= 0x1 << 3;
         
 		self.pumpkins = [[NSMutableArray alloc] init];
 		self.leaves = [[NSMutableSet alloc] init];
-        self.backgroundColor = [SKColor colorWithRed:1.0 green:0.35 blue:0.0 alpha:1.0];
+        self.backgroundColor = [SKColor colorWithRed:0.0 green:0.65 blue:1.0 alpha:1.0];
         
         self.message = [SKLabelNode labelNodeWithFontNamed:@"Futura"];
         
-        self.message.text = @"Tap to drop pumpkins!";
+        self.message.text = @"Tap to drop presents!";
         self.message.fontSize = 30;
 		self.message.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
 		self.message.zPosition = .5;
@@ -43,7 +43,7 @@ static const uint32_t leafCategory		= 0x1 << 3;
 		self.physicsWorld.gravity = CGVectorMake(0, -5.0);
 		self.physicsWorld.contactDelegate = self;
 		
-		self.turkey = [SKSpriteNode spriteNodeWithImageNamed:@"Turkey"];
+		self.turkey = [SKSpriteNode spriteNodeWithImageNamed:@"Santa"];
 		self.turkey.xScale = -.25;
 		self.turkey.yScale = .25;
 		self.turkey.position = CGPointMake(50, 50);
@@ -75,14 +75,14 @@ static const uint32_t leafCategory		= 0x1 << 3;
 	if ([self.leaves count] > 250) {
 		return;
 	}
-	SKSpriteNode *leaf = [SKSpriteNode spriteNodeWithImageNamed:@"Leaf1"];
+	SKSpriteNode *leaf = [SKSpriteNode spriteNodeWithImageNamed:@"Snowflake"];
 	leaf.position = CGPointMake(arc4random_uniform(self.frame.size.width), arc4random_uniform(self.frame.size.height/2)+.5*self.frame.size.height);
 	leaf.blendMode = SKBlendModeAlpha;
-	leaf.color = [UIColor redColor];
+	leaf.color = [UIColor whiteColor];
 	leaf.colorBlendFactor = 1.0f;
-	int size = arc4random_uniform(10)/2+15;
+	int size = arc4random_uniform(10)/2+13;
 	leaf.size = CGSizeMake(size, size);
-	leaf.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:.4f*size];
+	leaf.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:.3f*size];
 	leaf.physicsBody.mass = .0005*size*size;
 	leaf.physicsBody.restitution = .1;
 	leaf.physicsBody.friction = .1;
@@ -92,7 +92,7 @@ static const uint32_t leafCategory		= 0x1 << 3;
 	//leaf.physicsBody.linearDamping = .999999;
 	leaf.physicsBody.angularVelocity = arc4random_uniform(100)/20;
 	SKAction *fadeOut = [SKAction fadeOutWithDuration:arc4random_uniform(100)/9+5];
-	SKAction *colorChange = [SKAction colorizeWithColor:[UIColor yellowColor] colorBlendFactor:1 duration:fadeOut.duration];
+	SKAction *colorChange = [SKAction colorizeWithColor:[UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0] colorBlendFactor:1 duration:fadeOut.duration];
 	[leaf runAction:colorChange];
 	[leaf runAction:fadeOut completion:^(void) {
 		[self.leaves removeObject:leaf];
@@ -149,7 +149,7 @@ float range(float start, float range) {
 }
 
 -(void)addPumpkinAtLocation:(CGPoint)location {
-	SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Pumpkin"];
+	SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Present"];
 	sprite.position = location;
 	int size = arc4random_uniform(20)+30;
 	sprite.size = CGSizeMake(size, size);
@@ -232,9 +232,9 @@ float range(float start, float range) {
 		[self.turkey.physicsBody applyForce:CGVectorMake(-distance, 0)];
 	}
 	if (self.turkey.physicsBody.velocity.dx >= 0) {
-		self.turkey.xScale =-.25;
+		self.turkey.xScale =.25;
 	} else {
-		self.turkey.xScale = .25;
+		self.turkey.xScale =-.25;
 	}
 	if (distance < 80 && self.turkey.position.y < 31 && target.y > 80) {
 		self.turkey.physicsBody.velocity = CGVectorMake(self.turkey.physicsBody.velocity.dx*.8,380);

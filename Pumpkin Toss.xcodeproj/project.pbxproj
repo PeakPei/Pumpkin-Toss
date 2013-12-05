@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF199EEC1850B18000CE97BE /* Santa.png in Resources */ = {isa = PBXBuildFile; fileRef = BF199EEB1850B18000CE97BE /* Santa.png */; };
+		BF199EEE1850B36400CE97BE /* Present.png in Resources */ = {isa = PBXBuildFile; fileRef = BF199EED1850B36400CE97BE /* Present.png */; };
+		BF199EF01850B3FD00CE97BE /* Snowflake.png in Resources */ = {isa = PBXBuildFile; fileRef = BF199EEF1850B3FD00CE97BE /* Snowflake.png */; };
 		BF53AA801832C0BF00B8B903 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA7F1832C0BF00B8B903 /* Foundation.framework */; };
 		BF53AA821832C0BF00B8B903 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA811832C0BF00B8B903 /* CoreGraphics.framework */; };
 		BF53AA841832C0BF00B8B903 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA831832C0BF00B8B903 /* UIKit.framework */; };
@@ -18,7 +21,6 @@
 		BF53AA981832C0BF00B8B903 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF53AA961832C0BF00B8B903 /* Main_iPad.storyboard */; };
 		BF53AA9B1832C0BF00B8B903 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AA9A1832C0BF00B8B903 /* ViewController.m */; };
 		BF53AA9E1832C0BF00B8B903 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF53AA9D1832C0BF00B8B903 /* MyScene.m */; };
-		BF53AAA01832C0BF00B8B903 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = BF53AA9F1832C0BF00B8B903 /* Spaceship.png */; };
 		BF53AAA21832C0BF00B8B903 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF53AAA11832C0BF00B8B903 /* Images.xcassets */; };
 		BF53AAA91832C0BF00B8B903 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AAA81832C0BF00B8B903 /* XCTest.framework */; };
 		BF53AAAA1832C0BF00B8B903 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF53AA7F1832C0BF00B8B903 /* Foundation.framework */; };
@@ -30,7 +32,6 @@
 		BF8C6AE81833EC4800F530F8 /* Leaves.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF8C6AE71833EC4800F530F8 /* Leaves.sks */; };
 		BF9364751832D57700D44D5D /* Break.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF9364731832D57700D44D5D /* Break.sks */; };
 		BF9364761832D57700D44D5D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = BF9364741832D57700D44D5D /* spark.png */; };
-		BF93647B1832EF5700D44D5D /* Flame.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF93647A1832EF5700D44D5D /* Flame.sks */; };
 		BFC7F7011832F78800649CCA /* Turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F7001832F78800649CCA /* Turkey.png */; };
 		BFC7F7031833298900649CCA /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC7F7021833298900649CCA /* CoreMotion.framework */; };
 		BFC7F7051833354300649CCA /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC7F7041833354300649CCA /* Default-Landscape@2x.png */; };
@@ -47,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF199EEB1850B18000CE97BE /* Santa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Santa.png; sourceTree = "<group>"; };
+		BF199EED1850B36400CE97BE /* Present.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Present.png; sourceTree = "<group>"; };
+		BF199EEF1850B3FD00CE97BE /* Snowflake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snowflake.png; sourceTree = "<group>"; };
 		BF53AA7C1832C0BF00B8B903 /* Pumpkin Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pumpkin Toss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF53AA7F1832C0BF00B8B903 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF53AA811832C0BF00B8B903 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,7 +68,6 @@
 		BF53AA9A1832C0BF00B8B903 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BF53AA9C1832C0BF00B8B903 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		BF53AA9D1832C0BF00B8B903 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		BF53AA9F1832C0BF00B8B903 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		BF53AAA11832C0BF00B8B903 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF53AAA71832C0BF00B8B903 /* Pumpkin TossTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pumpkin TossTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF53AAA81832C0BF00B8B903 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -76,7 +79,6 @@
 		BF8C6AE71833EC4800F530F8 /* Leaves.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Leaves.sks; sourceTree = "<group>"; };
 		BF9364731832D57700D44D5D /* Break.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Break.sks; sourceTree = "<group>"; };
 		BF9364741832D57700D44D5D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		BF93647A1832EF5700D44D5D /* Flame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Flame.sks; sourceTree = "<group>"; };
 		BFC7F7001832F78800649CCA /* Turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Turkey.png; sourceTree = "<group>"; };
 		BFC7F7021833298900649CCA /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BFC7F7041833354300649CCA /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x.png"; path = "../Default-Landscape@2x.png"; sourceTree = "<group>"; };
@@ -152,10 +154,11 @@
 				BF53AA9C1832C0BF00B8B903 /* MyScene.h */,
 				BF53AA9D1832C0BF00B8B903 /* MyScene.m */,
 				BF8C6AE71833EC4800F530F8 /* Leaves.sks */,
-				BF93647A1832EF5700D44D5D /* Flame.sks */,
 				BF9364731832D57700D44D5D /* Break.sks */,
+				BF199EEB1850B18000CE97BE /* Santa.png */,
+				BF199EED1850B36400CE97BE /* Present.png */,
+				BF199EEF1850B3FD00CE97BE /* Snowflake.png */,
 				BF9364741832D57700D44D5D /* spark.png */,
-				BF53AA9F1832C0BF00B8B903 /* Spaceship.png */,
 				BF53AAC01832CA5500B8B903 /* Pumpkin.png */,
 				BFC7F7001832F78800649CCA /* Turkey.png */,
 				BF8C6AE51833EC2C00F530F8 /* Leaf1.png */,
@@ -274,11 +277,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF53AAA01832C0BF00B8B903 /* Spaceship.png in Resources */,
 				BF9364751832D57700D44D5D /* Break.sks in Resources */,
+				BF199EEE1850B36400CE97BE /* Present.png in Resources */,
+				BF199EF01850B3FD00CE97BE /* Snowflake.png in Resources */,
 				BF53AAA21832C0BF00B8B903 /* Images.xcassets in Resources */,
 				BF53AA981832C0BF00B8B903 /* Main_iPad.storyboard in Resources */,
-				BF93647B1832EF5700D44D5D /* Flame.sks in Resources */,
+				BF199EEC1850B18000CE97BE /* Santa.png in Resources */,
 				BFC7F7011832F78800649CCA /* Turkey.png in Resources */,
 				BF53AA951832C0BF00B8B903 /* Main_iPhone.storyboard in Resources */,
 				BF8C6AE81833EC4800F530F8 /* Leaves.sks in Resources */,
