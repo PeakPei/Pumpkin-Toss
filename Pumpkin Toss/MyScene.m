@@ -24,7 +24,7 @@ static const uint32_t leafCategory		= 0x1 << 3;
 		self.motionManager.accelerometerUpdateInterval = 1/60.0f;
 		[self.motionManager startAccelerometerUpdates];
         
-		self.pumpkins = [[NSMutableArray alloc] init];
+		self.pumpkins = [[NSMutableSet alloc] init];
 		self.leaves = [[NSMutableSet alloc] init];
         self.backgroundColor = [SKColor colorWithRed:0.0 green:0.65 blue:1.0 alpha:1.0];
         
